@@ -1,24 +1,17 @@
-//useEffect
+//useState3
+//useState2のリファクタリング
+//useStateにはオブジェクトを渡せる
+//複数の値があるオブジェクトだとsetStateを使うときに
+//stateを展開してから、変える値: state.変える値にする？
+//state.priceだと長いので分割代入して短くする
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const App = (props) => {
   const [state, setState] = useState(props);
+  //分割代入↓
   const { name, price } = state;
-  //useEffectはレンダーが終わったあとに発火Didmount DidUpdateに似てる
-  useEffect(() => {
-    console.log("This is like componentDidMount or componentDidUpdate.");
-  });
-  //Didmount的な使い方をするときは第2引数にからの配列を渡す
-  useEffect(() => {
-    console.log("This is like componentDidMount");
-  },[]);
-  //特定の値が変わった時だけ発火
-  //第2引数に値を渡す
-  useEffect(() => {
-    console.log("This callback is for name only.");
-  },[name]);
-
+  //nameというオブジェとpriceというオブジェが出来る
   return (
     <>
       <p>
