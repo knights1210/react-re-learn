@@ -1,4 +1,5 @@
 //useState1
+//状態の管理
 
 import React, { useState } from "react";
 
