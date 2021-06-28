@@ -8,7 +8,7 @@ const Event = ({ event, dispatch }) => {
     const result = window.confirm(
       `イベント(id=${id})を本当に削除してもいいですか？`
     );
-    //reducerに渡るtypeのミスを無くす
+    
 
     if (result) {
       dispatch({ type: DELETE_EVENT, id });
