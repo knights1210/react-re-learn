@@ -1,9 +1,16 @@
-import React from "react";
-import Event from './Event'
+import React, { useContext } from "react";
+import Event from "./Event";
+import AppContext from "../contexts/AppContext";
 
-const Events = ({state, dispatch}) => {
+const Events = ({ state, dispatch }) => {
+  //createContext()でcomponentを作成し、作成したcomponentで
+  //ラップすれば((ex)<AppContext></AppContext>)
+  //useContextでAppContextに渡ったvalueを参照出来る
+  //((ex)<AppContext.Provider value={'Hello'}></AppContext.Provider>)
+  const value = useContext(AppContext)
   return (
     <>
+      <div>{value}</div>
       <h4>イベント一覧</h4>
       <table className="table table-hover">
         <thead>
